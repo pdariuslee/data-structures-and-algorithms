@@ -98,6 +98,23 @@ Return the resulting output array.
 const fizzbuzz = (arr) => {
   // Solution code here...
 
+  let arrAnswer = [];
+
+  arr.forEach(Element => {
+    if(Element % 3 === 0 && Element%5 === 0){
+      arrAnswer.push('Fizz Buzz');
+    } else if(Element % 5 === 0){
+      arrAnswer.push('Buzz');
+    } else if(Element % 3 === 0){
+      arrAnswer.push('Fizz');
+    } else{
+      arrAnswer.push(Element);
+    }
+  });
+
+  console.log(arrAnswer);
+  return arrAnswer;
+
   // arr.forEach(function(item, index, array)
 };
 
@@ -134,7 +151,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   test('It should print out messages or numbers', () => {
