@@ -74,7 +74,7 @@ const templatingWithMustache = () => {
 
   let mustacheArray = [];
   characters.forEach(character => {
-    const newHTML = Mustache.render($('#template').html(), character)
+    const newHTML = Mustache.render($('#template').html(), character);
 
     mustacheArray.push(newHTML);
   });
@@ -134,6 +134,28 @@ hasChildrenValues(characters, 'Sansa') will return false
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
 
+  let result;
+  for(let i = 0; i < arr.length; i++){
+    // console.log(arr);
+
+    if(characters[i].name === character){
+
+      // console.log('IT WORKED! characters[i].name ' + characters[i].name);
+      // console.log('IT WORKED! character ' + character);
+
+      if(characters[i].children !== []){
+        // console.log('2nd if' + characters[i].children);
+
+        result = true;
+      }else {
+        result = false;
+      }
+    }
+  }
+
+  // console.log('Suboooook');
+  // console.log(result);
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
